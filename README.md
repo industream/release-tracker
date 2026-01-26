@@ -2,12 +2,14 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 26, 2026 at 14:02 UTC
+> Last updated: January 26, 2026 at 15:57 UTC
 
 ## Flowmaker Core
 
 | Component | Version | Published |
 |-----------|---------|-----------|
+| Cdn Helper | `1.0.2` | 2026-01-26 |
+| Cdn Server | `1.0.2` | 2026-01-26 |
 | Flowmaker Confighub | `1.7.1` | 2026-01-19 |
 | Flowmaker Front | `1.7.1` | 2026-01-19 |
 | Flowmaker Logger | `1.7.1` | 2026-01-19 |
@@ -40,8 +42,8 @@ Current versions of all Industream platform components.
 
 | Component | Version | Published |
 |-----------|---------|-----------|
-| Api | `1.0.0-secure` | 2025-12-24 |
-| Ui | `1.0.0-secure` | 2025-12-24 |
+| Api | `1.0.0` | 2025-12-19 |
+| Ui | `1.0.0` | 2025-12-19 |
 
 ---
 
