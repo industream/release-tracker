@@ -35,6 +35,7 @@ fetch_latest_version() {
         | grep -v "^latest$" \
         | grep -v "^dev$" \
         | grep -v "\-dev" \
+        | grep -v "\-secure" \
         | grep -E "^v?[0-9]" \
         | head -1)
 
