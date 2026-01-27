@@ -127,10 +127,7 @@ EOF
             status=""
         fi
 
-        # Docker image name
-        docker_image="${repo_name}:${version}"
-
-        echo "| [$display_repo]($harbor_link) | \`$docker_image\` | \`$version\` | $date | $status |" >> "$README_FILE"
+        echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | $date | $status |" >> "$README_FILE"
     done
 
     echo "" >> "$README_FILE"
