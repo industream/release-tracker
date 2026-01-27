@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 27, 2026 at 13:02 UTC
+> Last updated: January 27, 2026 at 13:07 UTC
 
 ## Flowmaker Core
 
@@ -66,6 +66,13 @@ Current versions of all Industream platform components.
 |-----------|-------|---------|----------------|--------|
 | [Uimaker Backend](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uimaker/repositories/uimaker-backend) | `uimaker-backend` | `1.2.21` | `2025‑11‑28` |  |
 | [Uimaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uimaker/repositories/uimaker-front) | `uimaker-front` | `1.2.21` | `2025‑11‑28` |  |
+
+## Grafana
+
+| Component | Image | Version | Published Date | Status |
+|-----------|-------|---------|----------------|--------|
+| [Grafana Industream](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/grafana/repositories/grafana-industream) | `grafana-industream` | `N/A` | `-` |  |
+| [Industream Dashboard](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/grafana/repositories/industream-dashboard) | `industream-dashboard` | `1.0.8` | `2025‑04‑23` |  |
 
 ---
 
