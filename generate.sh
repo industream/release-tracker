@@ -67,7 +67,8 @@ fetch_push_date() {
     local date=$(curl -s -u "$HARBOR_AUTH" \
         "${HARBOR_URL}/api/v2.0/projects/${project}/repositories/${repo}/artifacts?page_size=10&sort=-push_time" \
         | jq -r --arg v "$version" '[.[] | select(.tags[]?.name == $v)][0].push_time // empty' \
-        | cut -d'T' -f1)
+        | cut -d'T' -f1 \
+        | sed 's/-/‑/g')
 
     echo "${date:--}"
 }
