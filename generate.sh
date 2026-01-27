@@ -10,7 +10,7 @@ HARBOR_URL="https://842775dh.c1.gra9.container-registry.ovh.net"
 HARBOR_AUTH="${HARBOR_USER}:${HARBOR_TOKEN}"
 
 # Projects to scan
-PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog" "uifusion" "timeseries" "uimaker")
+PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog" "uifusion" "timeseries" "uimaker" "grafana")
 
 # Get Docker labels from image
 get_docker_labels() {
@@ -154,6 +154,7 @@ for project in "${PROJECTS[@]}"; do
         "uifusion") display_name="UIFusion" ;;
         "timeseries") display_name="Timeseries" ;;
         "uimaker") display_name="UIMaker" ;;
+        "grafana") display_name="Grafana" ;;
         *) display_name="$project" ;;
     esac
 
