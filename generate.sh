@@ -87,8 +87,8 @@ for project in "${PROJECTS[@]}"; do
     cat >> "$README_FILE" << EOF
 ## $display_name
 
-| Component | Version | Published | Status |
-|-----------|---------|-----------|--------|
+| Component | Image | Version | Published | Status |
+|-----------|-------|---------|-----------|--------|
 EOF
 
     # Get repositories (exclude dev/, industream/, etcd3-browser)
@@ -127,7 +127,10 @@ EOF
             status=""
         fi
 
-        echo "| [$display_repo]($harbor_link) | \`$version\` | $date | $status |" >> "$README_FILE"
+        # Docker image name
+        docker_image="${repo_name}:${version}"
+
+        echo "| [$display_repo]($harbor_link) | \`$docker_image\` | \`$version\` | $date | $status |" >> "$README_FILE"
     done
 
     echo "" >> "$README_FILE"
