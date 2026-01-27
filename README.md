@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 27, 2026 at 13:07 UTC
+> Last updated: January 27, 2026 at 13:11 UTC
 
 ## Flowmaker Core
 
@@ -25,7 +25,6 @@ Current versions of all Industream platform components.
 | [Enqueue](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-enqueue) | `flow-box-enqueue` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Equation Solver](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-equation-solver) | `flow-box-equation-solver` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Http](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http) | `flow-box-http` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Http Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http-client) | `flow-box-http-client` | `2.0.1` | `2026‑01‑27` | ![Deprecated](https://img.shields.io/badge/Deprecated-⚠-orange)  |
 | [Influx Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-influx-client) | `flow-box-influx-client` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Js Expression](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-js-expression) | `flow-box-js-expression` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Modbus Tcp](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-modbus-tcp) | `flow-box-modbus-tcp` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
@@ -73,6 +72,15 @@ Current versions of all Industream platform components.
 |-----------|-------|---------|----------------|--------|
 | [Grafana Industream](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/grafana/repositories/grafana-industream) | `grafana-industream` | `N/A` | `-` |  |
 | [Industream Dashboard](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/grafana/repositories/industream-dashboard) | `industream-dashboard` | `1.0.8` | `2025‑04‑23` |  |
+
+## Deprecated
+
+> ⚠️ Ces composants ne sont plus maintenus et seront retirés dans une future version.
+
+| Component | Image | Version | Published Date | Origin |
+|-----------|-------|---------|----------------|--------|
+| [Http Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http-client) | `flow-box-http-client` | `2.0.1` | `2026‑01‑27` | Flowmaker Workers |
+
 
 ---
 
