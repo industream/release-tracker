@@ -223,7 +223,7 @@ EOF
     if [ -n "$PROJECT_DEPRECATED" ]; then
         cat >> "$README_FILE" << 'EOF'
 
-> [!WARNING]
+> [!CAUTION]
 > **Deprecated components:**
 EOF
         echo "$PROJECT_DEPRECATED" >> "$README_FILE"
