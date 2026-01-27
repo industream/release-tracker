@@ -95,6 +95,9 @@ get_status_badges() {
 
 echo "Starting version fetch from Harbor..."
 
+# Initialize deprecated items list
+DEPRECATED_ITEMS=""
+
 # Start README
 cat > "$README_FILE" << 'EOF'
 # Industream Version Dashboard
@@ -196,13 +199,36 @@ EOF
 
         # Get Docker labels and generate status badges
         labels=$(get_docker_labels "$project" "$repo_name" "$version")
-        status=$(get_status_badges "$labels")
 
-        echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $status |" >> "$README_FILE"
+        # Check if deprecated
+        is_deprecated=$(echo "$labels" | jq -r '.deprecated // empty')
+
+        if [ "$is_deprecated" = "true" ]; then
+            # Add to deprecated list (will be shown in separate section)
+            DEPRECATED_ITEMS="${DEPRECATED_ITEMS}| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $display_name |
+"
+        else
+            status=$(get_status_badges "$labels")
+            echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $status |" >> "$README_FILE"
+        fi
     done
 
     echo "" >> "$README_FILE"
 done
+
+# Add deprecated section if there are deprecated items
+if [ -n "$DEPRECATED_ITEMS" ]; then
+    cat >> "$README_FILE" << 'EOF'
+## Deprecated
+
+> ⚠️ Ces composants ne sont plus maintenus et seront retirés dans une future version.
+
+| Component | Image | Version | Published Date | Origin |
+|-----------|-------|---------|----------------|--------|
+EOF
+    echo "$DEPRECATED_ITEMS" >> "$README_FILE"
+    echo "" >> "$README_FILE"
+fi
 
 # Add footer
 cat >> "$README_FILE" << 'EOF'
