@@ -204,8 +204,8 @@ EOF
         is_deprecated=$(echo "$labels" | jq -r '.deprecated // empty')
 
         if [ "$is_deprecated" = "true" ]; then
-            # Add to deprecated list (will be shown in separate section)
-            DEPRECATED_ITEMS="${DEPRECATED_ITEMS}| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $display_name |
+            # Add to deprecated list (will be shown in separate section) - grayed out with sub tags
+            DEPRECATED_ITEMS="${DEPRECATED_ITEMS}| <sub>[$display_repo]($harbor_link)</sub> | <sub>\`$repo_name\`</sub> | <sub>\`$version\`</sub> | <sub>\`$date\`</sub> | <sub>$display_name</sub> |
 "
         else
             status=$(get_status_badges "$labels")
@@ -221,7 +221,8 @@ if [ -n "$DEPRECATED_ITEMS" ]; then
     cat >> "$README_FILE" << 'EOF'
 ## Deprecated
 
-> ⚠️ Ces composants ne sont plus maintenus et seront retirés dans une future version.
+> [!CAUTION]
+> **These components are no longer maintained and will be removed in a future version.**
 
 | Component | Image | Version | Published Date | Origin |
 |-----------|-------|---------|----------------|--------|
