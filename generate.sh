@@ -127,7 +127,7 @@ EOF
             status=""
         fi
 
-        echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | $date | $status |" >> "$README_FILE"
+        echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $status |" >> "$README_FILE"
     done
 
     echo "" >> "$README_FILE"
