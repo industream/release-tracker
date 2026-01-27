@@ -2,15 +2,15 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 27, 2026 at 09:08 UTC
+> Last updated: January 27, 2026 at 09:13 UTC
 
 ## Flowmaker Core
 
 | Component | Image | Version | Published Date | Status |
 |-----------|-------|---------|----------------|--------|
-| [Cdn Cache](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-cache) | `cdn-cache` | `2.0.0` | `2026‑01‑27` |  |
+| [Cdn Cache](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-cache) | `cdn-cache` | `1.0.0` | `2026‑01‑27` |  |
 | [Cdn Helper](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-helper) | `cdn-helper` | `1.0.5` | `2026‑01‑27` |  |
-| [Cdn Server](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-server) | `cdn-server` | `1.0.7` | `2026‑01‑27` |  |
+| [Cdn Server](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-server) | `cdn-server` | `2.0.0` | `2026‑01‑27` |  |
 | [Flowmaker Confighub](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-confighub) | `flowmaker-confighub` | `1.7.1` | `2026‑01‑19` |  |
 | [Flowmaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-front) | `flowmaker-front` | `1.7.1` | `2026‑01‑19` |  |
 | [Flowmaker Logger](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-logger) | `flowmaker-logger` | `1.7.1` | `2026‑01‑19` |  |
@@ -43,8 +43,8 @@ Current versions of all Industream platform components.
 
 | Component | Image | Version | Published Date | Status |
 |-----------|-------|---------|----------------|--------|
-| [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/api) | `api` | `1.0.0` | `2025‑12‑19` |  |
-| [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/ui) | `ui` | `1.0.0` | `2025‑12‑19` |  |
+| [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/api) | `api` | `1.0.0` | `2025‑12‑19` | ![Official](https://img.shields.io/badge/Official-✓-green) |
+| [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/ui) | `ui` | `1.0.0` | `2025‑12‑19` | ![Official](https://img.shields.io/badge/Official-✓-green) |
 
 ---
 
