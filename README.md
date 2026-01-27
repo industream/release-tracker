@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: DATE_PLACEHOLDER
+> Last updated: January 27, 2026 at 11:48 UTC
 
 ## Flowmaker Core
 
@@ -44,3 +44,8 @@ Current versions of all Industream platform components.
 | Component | Image | Version | Published Date | Status |
 |-----------|-------|---------|----------------|--------|
 | [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/api) | `api` | `1.0.0` | `2025‑12‑19` |  |
+| [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/ui) | `ui` | `1.0.0` | `2025‑12‑19` |  |
+
+---
+
+*Auto-updated daily from [Harbor Registry](https://842775dh.c1.gra9.container-registry.ovh.net)*
