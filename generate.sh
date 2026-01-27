@@ -88,8 +88,8 @@ for project in "${PROJECTS[@]}"; do
     cat >> "$README_FILE" << EOF
 ## $display_name
 
-| Component | Image | Version | Published | Status |
-|-----------|-------|---------|-----------|--------|
+| Component | Image | Version | Published Date | Status |
+|-----------|-------|---------|----------------|--------|
 EOF
 
     # Get repositories (exclude dev/, industream/, etcd3-browser)
