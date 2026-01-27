@@ -12,6 +12,18 @@ HARBOR_AUTH="${HARBOR_USER}:${HARBOR_TOKEN}"
 # Projects to scan
 PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog")
 
+# Check if image has "official" tag in Harbor
+is_official() {
+    local project=$1
+    local repo=$2
+
+    local has_official=$(curl -s -u "$HARBOR_AUTH" \
+        "${HARBOR_URL}/api/v2.0/projects/${project}/repositories/${repo}/artifacts?page_size=50" \
+        | jq -r '[.[].tags[]?.name] | if index("official") then "yes" else "no" end')
+
+    [ "$has_official" = "yes" ]
+}
+
 echo "Starting version fetch from Harbor..."
 
 # Start README
@@ -75,8 +87,8 @@ for project in "${PROJECTS[@]}"; do
     cat >> "$README_FILE" << EOF
 ## $display_name
 
-| Component | Version | Published |
-|-----------|---------|-----------|
+| Component | Version | Published | Status |
+|-----------|---------|-----------|--------|
 EOF
 
     # Get repositories (exclude dev/, industream/, etcd3-browser)
@@ -105,7 +117,14 @@ EOF
         # Clean display name
         display_repo=$(echo "$repo_name" | sed 's/flow-box-//' | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
 
-        echo "| $display_repo | \`$version\` | $date |" >> "$README_FILE"
+        # Check if official (has "official" tag in Harbor)
+        if is_official "$project" "$repo_name"; then
+            status="![Official](https://img.shields.io/badge/Official-✓-green)"
+        else
+            status=""
+        fi
+
+        echo "| $display_repo | \`$version\` | $date | $status |" >> "$README_FILE"
     done
 
     echo "" >> "$README_FILE"
