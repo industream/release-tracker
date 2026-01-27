@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 27, 2026 at 13:11 UTC
+> Last updated: January 27, 2026 at 13:22 UTC
 
 ## Flowmaker Core
 
@@ -75,11 +75,12 @@ Current versions of all Industream platform components.
 
 ## Deprecated
 
-> ⚠️ Ces composants ne sont plus maintenus et seront retirés dans une future version.
+> [!CAUTION]
+> **These components are no longer maintained and will be removed in a future version.**
 
 | Component | Image | Version | Published Date | Origin |
 |-----------|-------|---------|----------------|--------|
-| [Http Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http-client) | `flow-box-http-client` | `2.0.1` | `2026‑01‑27` | Flowmaker Workers |
+| <sub>[Http Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http-client)</sub> | <sub>`flow-box-http-client`</sub> | <sub>`2.0.1`</sub> | <sub>`2026‑01‑27`</sub> | <sub>Flowmaker Workers</sub> |
 
 
 ---
