@@ -10,7 +10,7 @@ HARBOR_URL="https://842775dh.c1.gra9.container-registry.ovh.net"
 HARBOR_AUTH="${HARBOR_USER}:${HARBOR_TOKEN}"
 
 # Projects to scan
-PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog")
+PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog" "uifusion" "timeseries" "uimaker")
 
 # Get Docker labels from image
 get_docker_labels() {
@@ -23,29 +23,39 @@ get_docker_labels() {
         return
     fi
 
-    # 1. Get manifest index to find amd64 digest
-    local amd64_digest=$(curl -sL -u "$HARBOR_AUTH" \
-        --header "Accept: application/vnd.oci.image.index.v1+json,application/vnd.docker.distribution.manifest.list.v2+json" \
-        "${HARBOR_URL}/v2/${project}/${repo}/manifests/${version}" 2>/dev/null \
-        | jq -r '.manifests[]? | select(.platform.architecture=="amd64" and .platform.os=="linux") | .digest' 2>/dev/null)
+    # Get manifest (could be index or direct manifest)
+    local manifest=$(curl -sL -u "$HARBOR_AUTH" \
+        --header "Accept: application/vnd.oci.image.index.v1+json,application/vnd.docker.distribution.manifest.list.v2+json,application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json" \
+        "${HARBOR_URL}/v2/${project}/${repo}/manifests/${version}" 2>/dev/null)
 
-    if [ -z "$amd64_digest" ]; then
-        echo "{}"
-        return
+    local config_digest=""
+
+    # Check if it's a manifest index (multi-arch) or direct manifest
+    local media_type=$(echo "$manifest" | jq -r '.mediaType // empty' 2>/dev/null)
+
+    if [[ "$media_type" == *"index"* ]] || [[ "$media_type" == *"list"* ]]; then
+        # Multi-arch: get amd64 digest first
+        local amd64_digest=$(echo "$manifest" | jq -r '.manifests[]? | select(.platform.architecture=="amd64" and .platform.os=="linux") | .digest' 2>/dev/null)
+        if [ -z "$amd64_digest" ]; then
+            echo "{}"
+            return
+        fi
+        # Get config from amd64 manifest
+        config_digest=$(curl -sL -u "$HARBOR_AUTH" \
+            --header "Accept: application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json" \
+            "${HARBOR_URL}/v2/${project}/${repo}/manifests/${amd64_digest}" 2>/dev/null \
+            | jq -r '.config.digest' 2>/dev/null)
+    else
+        # Single-arch: config is directly in manifest
+        config_digest=$(echo "$manifest" | jq -r '.config.digest // empty' 2>/dev/null)
     fi
-
-    # 2. Get config digest from manifest
-    local config_digest=$(curl -sL -u "$HARBOR_AUTH" \
-        --header "Accept: application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json" \
-        "${HARBOR_URL}/v2/${project}/${repo}/manifests/${amd64_digest}" 2>/dev/null \
-        | jq -r '.config.digest' 2>/dev/null)
 
     if [ -z "$config_digest" ]; then
         echo "{}"
         return
     fi
 
-    # 3. Get labels from config blob
+    # Get labels from config blob
     curl -sL -u "$HARBOR_AUTH" \
         "${HARBOR_URL}/v2/${project}/${repo}/blobs/${config_digest}" 2>/dev/null \
         | jq -r '.config.Labels // {}' 2>/dev/null
@@ -141,6 +151,9 @@ for project in "${PROJECTS[@]}"; do
         "flowmaker.core") display_name="Flowmaker Core" ;;
         "flowmaker.boxes") display_name="Flowmaker Workers" ;;
         "datacatalog") display_name="DataCatalog" ;;
+        "uifusion") display_name="UIFusion" ;;
+        "timeseries") display_name="Timeseries" ;;
+        "uimaker") display_name="UIMaker" ;;
         *) display_name="$project" ;;
     esac
 

@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 27, 2026 at 12:56 UTC
+> Last updated: January 27, 2026 at 13:02 UTC
 
 ## Flowmaker Core
 
@@ -25,7 +25,7 @@ Current versions of all Industream platform components.
 | [Enqueue](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-enqueue) | `flow-box-enqueue` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Equation Solver](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-equation-solver) | `flow-box-equation-solver` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Http](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http) | `flow-box-http` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Http Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http-client) | `flow-box-http-client` | `2.0.1` | `2026‑01‑27` |  |
+| [Http Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-http-client) | `flow-box-http-client` | `2.0.1` | `2026‑01‑27` | ![Deprecated](https://img.shields.io/badge/Deprecated-⚠-orange)  |
 | [Influx Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-influx-client) | `flow-box-influx-client` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Js Expression](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-js-expression) | `flow-box-js-expression` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Modbus Tcp](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-modbus-tcp) | `flow-box-modbus-tcp` | `2.0.2` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
@@ -46,6 +46,26 @@ Current versions of all Industream platform components.
 |-----------|-------|---------|----------------|--------|
 | [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/api) | `api` | `1.0.0` | `2025‑12‑19` |  |
 | [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/datacatalog/repositories/ui) | `ui` | `1.0.0` | `2025‑12‑19` |  |
+
+## UIFusion
+
+| Component | Image | Version | Published Date | Status |
+|-----------|-------|---------|----------------|--------|
+| [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uifusion/repositories/api) | `api` | `1.0.6` | `2026‑01‑16` |  |
+| [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uifusion/repositories/ui) | `ui` | `1.0.7` | `2026‑01‑27` |  |
+
+## Timeseries
+
+| Component | Image | Version | Published Date | Status |
+|-----------|-------|---------|----------------|--------|
+| [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/timeseries/repositories/api) | `api` | `1.0.0-alpha.4` | `2025‑08‑21` |  |
+
+## UIMaker
+
+| Component | Image | Version | Published Date | Status |
+|-----------|-------|---------|----------------|--------|
+| [Uimaker Backend](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uimaker/repositories/uimaker-backend) | `uimaker-backend` | `1.2.21` | `2025‑11‑28` |  |
+| [Uimaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uimaker/repositories/uimaker-front) | `uimaker-front` | `1.2.21` | `2025‑11‑28` |  |
 
 ---
 
