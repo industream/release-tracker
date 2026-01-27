@@ -12,16 +12,42 @@ HARBOR_AUTH="${HARBOR_USER}:${HARBOR_TOKEN}"
 # Projects to scan
 PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog")
 
-# Check if image has "official" tag in Harbor
+# Check if image has Docker label "official=true"
 is_official() {
     local project=$1
     local repo=$2
+    local version=$3
 
-    local has_official=$(curl -s -u "$HARBOR_AUTH" \
-        "${HARBOR_URL}/api/v2.0/projects/${project}/repositories/${repo}/artifacts?page_size=50" \
-        | jq -r '[.[].tags[]?.name] | if index("official") then "yes" else "no" end')
+    if [ "$version" = "N/A" ]; then
+        return 1
+    fi
 
-    [ "$has_official" = "yes" ]
+    # 1. Get manifest index to find amd64 digest
+    local amd64_digest=$(curl -sL -u "$HARBOR_AUTH" \
+        --header "Accept: application/vnd.oci.image.index.v1+json,application/vnd.docker.distribution.manifest.list.v2+json" \
+        "${HARBOR_URL}/v2/${project}/${repo}/manifests/${version}" 2>/dev/null \
+        | jq -r '.manifests[]? | select(.platform.architecture=="amd64" and .platform.os=="linux") | .digest' 2>/dev/null)
+
+    if [ -z "$amd64_digest" ]; then
+        return 1
+    fi
+
+    # 2. Get config digest from manifest
+    local config_digest=$(curl -sL -u "$HARBOR_AUTH" \
+        --header "Accept: application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json" \
+        "${HARBOR_URL}/v2/${project}/${repo}/manifests/${amd64_digest}" 2>/dev/null \
+        | jq -r '.config.digest' 2>/dev/null)
+
+    if [ -z "$config_digest" ]; then
+        return 1
+    fi
+
+    # 3. Get labels from config blob
+    local official_label=$(curl -sL -u "$HARBOR_AUTH" \
+        "${HARBOR_URL}/v2/${project}/${repo}/blobs/${config_digest}" 2>/dev/null \
+        | jq -r '.config.Labels.official // empty' 2>/dev/null)
+
+    [ "$official_label" = "true" ]
 }
 
 echo "Starting version fetch from Harbor..."
@@ -121,8 +147,8 @@ EOF
         # Harbor link
         harbor_link="${HARBOR_URL}/harbor/projects/${project}/repositories/${repo_name}"
 
-        # Check if official (has "official" tag in Harbor)
-        if is_official "$project" "$repo_name"; then
+        # Check if official (has Docker label "official=true")
+        if is_official "$project" "$repo_name" "$version"; then
             status="![Official](https://img.shields.io/badge/Official-✓-green)"
         else
             status=""
