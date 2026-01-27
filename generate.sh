@@ -12,14 +12,15 @@ HARBOR_AUTH="${HARBOR_USER}:${HARBOR_TOKEN}"
 # Projects to scan
 PROJECTS=("flowmaker.core" "flowmaker.boxes" "datacatalog")
 
-# Check if image has Docker label "official=true"
-is_official() {
+# Get Docker labels from image
+get_docker_labels() {
     local project=$1
     local repo=$2
     local version=$3
 
     if [ "$version" = "N/A" ]; then
-        return 1
+        echo "{}"
+        return
     fi
 
     # 1. Get manifest index to find amd64 digest
@@ -29,7 +30,8 @@ is_official() {
         | jq -r '.manifests[]? | select(.platform.architecture=="amd64" and .platform.os=="linux") | .digest' 2>/dev/null)
 
     if [ -z "$amd64_digest" ]; then
-        return 1
+        echo "{}"
+        return
     fi
 
     # 2. Get config digest from manifest
@@ -39,15 +41,46 @@ is_official() {
         | jq -r '.config.digest' 2>/dev/null)
 
     if [ -z "$config_digest" ]; then
-        return 1
+        echo "{}"
+        return
     fi
 
     # 3. Get labels from config blob
-    local official_label=$(curl -sL -u "$HARBOR_AUTH" \
+    curl -sL -u "$HARBOR_AUTH" \
         "${HARBOR_URL}/v2/${project}/${repo}/blobs/${config_digest}" 2>/dev/null \
-        | jq -r '.config.Labels.official // empty' 2>/dev/null)
+        | jq -r '.config.Labels // {}' 2>/dev/null
+}
 
-    [ "$official_label" = "true" ]
+# Generate status badges from Docker labels
+get_status_badges() {
+    local labels=$1
+    local badges=""
+
+    # Check official label
+    local official=$(echo "$labels" | jq -r '.official // empty')
+    if [ "$official" = "true" ]; then
+        badges="${badges}![Official](https://img.shields.io/badge/Official-✓-green) "
+    fi
+
+    # Check deprecated label
+    local deprecated=$(echo "$labels" | jq -r '.deprecated // empty')
+    if [ "$deprecated" = "true" ]; then
+        badges="${badges}![Deprecated](https://img.shields.io/badge/Deprecated-⚠-orange) "
+    fi
+
+    # Check experimental label
+    local experimental=$(echo "$labels" | jq -r '.experimental // empty')
+    if [ "$experimental" = "true" ]; then
+        badges="${badges}![Experimental](https://img.shields.io/badge/Experimental-🧪-blue) "
+    fi
+
+    # Check beta label
+    local beta=$(echo "$labels" | jq -r '.beta // empty')
+    if [ "$beta" = "true" ]; then
+        badges="${badges}![Beta](https://img.shields.io/badge/Beta-β-yellow) "
+    fi
+
+    echo "$badges"
 }
 
 echo "Starting version fetch from Harbor..."
@@ -147,12 +180,9 @@ EOF
         # Harbor link
         harbor_link="${HARBOR_URL}/harbor/projects/${project}/repositories/${repo_name}"
 
-        # Check if official (has Docker label "official=true")
-        if is_official "$project" "$repo_name" "$version"; then
-            status="![Official](https://img.shields.io/badge/Official-✓-green)"
-        else
-            status=""
-        fi
+        # Get Docker labels and generate status badges
+        labels=$(get_docker_labels "$project" "$repo_name" "$version")
+        status=$(get_status_badges "$labels")
 
         echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $status |" >> "$README_FILE"
     done
