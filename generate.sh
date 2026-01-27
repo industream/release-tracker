@@ -161,6 +161,9 @@ for project in "${PROJECTS[@]}"; do
         *) display_name="$project" ;;
     esac
 
+    # Reset project-level deprecated list
+    PROJECT_DEPRECATED=""
+
     cat >> "$README_FILE" << EOF
 ## $display_name
 
@@ -204,7 +207,10 @@ EOF
         is_deprecated=$(echo "$labels" | jq -r '.deprecated // empty')
 
         if [ "$is_deprecated" = "true" ]; then
-            # Add to deprecated list (will be shown in separate section) - grayed out with sub tags
+            # Add to project-level deprecated list
+            PROJECT_DEPRECATED="${PROJECT_DEPRECATED}- ~~[$display_repo]($harbor_link)~~ \`$version\`
+"
+            # Add to global deprecated list
             DEPRECATED_ITEMS="${DEPRECATED_ITEMS}| <sub>[$display_repo]($harbor_link)</sub> | <sub>\`$repo_name\`</sub> | <sub>\`$version\`</sub> | <sub>\`$date\`</sub> | <sub>$display_name</sub> |
 "
         else
@@ -212,6 +218,16 @@ EOF
             echo "| [$display_repo]($harbor_link) | \`$repo_name\` | \`$version\` | \`$date\` | $status |" >> "$README_FILE"
         fi
     done
+
+    # Add project-level deprecated subsection if any
+    if [ -n "$PROJECT_DEPRECATED" ]; then
+        cat >> "$README_FILE" << 'EOF'
+
+> [!WARNING]
+> **Deprecated components:**
+EOF
+        echo "$PROJECT_DEPRECATED" >> "$README_FILE"
+    fi
 
     echo "" >> "$README_FILE"
 done
