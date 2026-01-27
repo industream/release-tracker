@@ -117,6 +117,9 @@ EOF
         # Clean display name
         display_repo=$(echo "$repo_name" | sed 's/flow-box-//' | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
 
+        # Harbor link
+        harbor_link="${HARBOR_URL}/harbor/projects/${project}/repositories/${repo_name}"
+
         # Check if official (has "official" tag in Harbor)
         if is_official "$project" "$repo_name"; then
             status="![Official](https://img.shields.io/badge/Official-✓-green)"
@@ -124,7 +127,7 @@ EOF
             status=""
         fi
 
-        echo "| $display_repo | \`$version\` | $date | $status |" >> "$README_FILE"
+        echo "| [$display_repo]($harbor_link) | \`$version\` | $date | $status |" >> "$README_FILE"
     done
 
     echo "" >> "$README_FILE"
