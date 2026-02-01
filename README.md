@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: January 31, 2026 at 06:13 UTC
+> Last updated: February 01, 2026 at 06:20 UTC
 
 ## Flowmaker Core
 
