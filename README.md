@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: February 07, 2026 at 06:18 UTC
+> Last updated: February 08, 2026 at 06:21 UTC
 
 ## Flowmaker Core
 
@@ -20,7 +20,7 @@ Current versions of all Industream platform components.
 
 | Component | Image | Version | Published Date | Status |
 |-----------|-------|---------|----------------|--------|
-| [Conditional Dataset Validator](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-conditional-dataset-validator) | `flow-box-conditional-dataset-validator` | `2.0.3` | `2026‑01‑27` |  |
+| [Conditional Dataset Validator](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-conditional-dataset-validator) | `flow-box-conditional-dataset-validator` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Data Logger](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-data-logger) | `flow-box-data-logger` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Enqueue](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-enqueue) | `flow-box-enqueue` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Equation Solver](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-equation-solver) | `flow-box-equation-solver` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
