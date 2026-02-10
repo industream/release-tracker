@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: February 09, 2026 at 06:29 UTC
+> Last updated: February 10, 2026 at 06:29 UTC
 
 ## Flowmaker Core
 
@@ -12,7 +12,7 @@ Current versions of all Industream platform components.
 | [Cdn Helper](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-helper) | `cdn-helper` | `1.0.8` | `2026‑01‑27` |  |
 | [Cdn Server](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-server) | `cdn-server` | `2.0.0` | `2026‑01‑27` |  |
 | [Flowmaker Confighub](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-confighub) | `flowmaker-confighub` | `1.7.1` | `2026‑01‑19` |  |
-| [Flowmaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-front) | `flowmaker-front` | `1.7.2` | `2026‑01‑27` |  |
+| [Flowmaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-front) | `flowmaker-front` | `1.7.3` | `2026‑02‑09` |  |
 | [Flowmaker Logger](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-logger) | `flowmaker-logger` | `1.7.1` | `2026‑01‑19` |  |
 | [Flowmaker Runtime](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-runtime) | `flowmaker-runtime` | `1.7.1` | `2026‑01‑19` |  |
 
