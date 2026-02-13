@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: February 12, 2026 at 06:27 UTC
+> Last updated: February 13, 2026 at 06:26 UTC
 
 ## Flowmaker Core
 
@@ -30,9 +30,9 @@ Current versions of all Industream platform components.
 | [Modbus Tcp](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-modbus-tcp) | `flow-box-modbus-tcp` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Mqtt Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-mqtt-client) | `flow-box-mqtt-client` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Notification](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-notification) | `flow-box-notification` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Opc Ua Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-opc-ua-client) | `flow-box-opc-ua-client` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Postgres Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-postgres-client) | `flow-box-postgres-client` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Test Data Generator](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-test-data-generator) | `flow-box-test-data-generator` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
+| [Opc Ua Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-opc-ua-client) | `flow-box-opc-ua-client` | `2.0.3` | `2026‑01‑27` |  |
+| [Postgres Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-postgres-client) | `flow-box-postgres-client` | `2.0.3` | `2026‑01‑27` |  |
+| [Test Data Generator](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-test-data-generator) | `flow-box-test-data-generator` | `2.0.3` | `2026‑01‑27` |  |
 | [Timer](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-timer) | `flow-box-timer` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Timeseries Workers](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-timeseries-workers) | `flow-box-timeseries-workers` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Toolkit](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-toolkit) | `flow-box-toolkit` | `1.10.1` | `2026‑01‑02` |  |
@@ -56,7 +56,7 @@ Current versions of all Industream platform components.
 | Component | Image | Version | Published Date | Status |
 |-----------|-------|---------|----------------|--------|
 | [Api](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uifusion/repositories/api) | `api` | `1.0.6` | `2026‑01‑16` |  |
-| [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uifusion/repositories/ui) | `ui` | `1.0.8` | `2026‑02‑05` |  |
+| [Ui](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/uifusion/repositories/ui) | `ui` | `1.0.8` | `2026‑02‑12` |  |
 
 ## Timeseries
 
