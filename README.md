@@ -2,7 +2,7 @@
 
 Current versions of all Industream platform components.
 
-> Last updated: February 13, 2026 at 06:26 UTC
+> Last updated: February 14, 2026 at 06:17 UTC
 
 ## Flowmaker Core
 
@@ -11,10 +11,10 @@ Current versions of all Industream platform components.
 | [Cdn Cache](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-cache) | `cdn-cache` | `2.0.2` | `2026‑01‑27` |  |
 | [Cdn Helper](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-helper) | `cdn-helper` | `1.0.8` | `2026‑01‑27` |  |
 | [Cdn Server](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/cdn-server) | `cdn-server` | `2.0.0` | `2026‑01‑27` |  |
-| [Flowmaker Confighub](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-confighub) | `flowmaker-confighub` | `1.7.1` | `2026‑01‑19` |  |
-| [Flowmaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-front) | `flowmaker-front` | `1.7.3` | `2026‑02‑09` |  |
-| [Flowmaker Logger](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-logger) | `flowmaker-logger` | `1.7.1` | `2026‑01‑19` |  |
-| [Flowmaker Runtime](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-runtime) | `flowmaker-runtime` | `1.7.1` | `2026‑01‑19` |  |
+| [Flowmaker Confighub](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-confighub) | `flowmaker-confighub` | `1.7.4` | `2026‑02‑13` |  |
+| [Flowmaker Front](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-front) | `flowmaker-front` | `1.7.4` | `2026‑02‑13` |  |
+| [Flowmaker Logger](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-logger) | `flowmaker-logger` | `1.7.4` | `2026‑02‑13` |  |
+| [Flowmaker Runtime](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.core/repositories/flowmaker-runtime) | `flowmaker-runtime` | `1.7.4` | `2026‑02‑13` |  |
 
 ## Flowmaker Workers
 
@@ -30,11 +30,11 @@ Current versions of all Industream platform components.
 | [Modbus Tcp](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-modbus-tcp) | `flow-box-modbus-tcp` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Mqtt Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-mqtt-client) | `flow-box-mqtt-client` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Notification](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-notification) | `flow-box-notification` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Opc Ua Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-opc-ua-client) | `flow-box-opc-ua-client` | `2.0.3` | `2026‑01‑27` |  |
-| [Postgres Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-postgres-client) | `flow-box-postgres-client` | `2.0.3` | `2026‑01‑27` |  |
-| [Test Data Generator](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-test-data-generator) | `flow-box-test-data-generator` | `2.0.3` | `2026‑01‑27` |  |
+| [Opc Ua Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-opc-ua-client) | `flow-box-opc-ua-client` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
+| [Postgres Client](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-postgres-client) | `flow-box-postgres-client` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
+| [Test Data Generator](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-test-data-generator) | `flow-box-test-data-generator` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Timer](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-timer) | `flow-box-timer` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
-| [Timeseries Workers](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-timeseries-workers) | `flow-box-timeseries-workers` | `2.0.3` | `2026‑01‑27` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
+| [Timeseries Workers](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-timeseries-workers) | `flow-box-timeseries-workers` | `2.0.5` | `2026‑02‑13` | ![Official](https://img.shields.io/badge/Official-✓-green)  |
 | [Toolkit](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flow-box-toolkit) | `flow-box-toolkit` | `1.10.1` | `2026‑01‑02` |  |
 | [Flowmaker Data Cleansing](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/flowmaker-data-cleansing) | `flowmaker-data-cleansing` | `1.1.1` | `2025‑12‑24` |  |
 | [Luminosity Box](https://842775dh.c1.gra9.container-registry.ovh.net/harbor/projects/flowmaker.boxes/repositories/luminosity-box) | `luminosity-box` | `1.0.2` | `2025‑11‑11` |  |
